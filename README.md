@@ -13,3 +13,10 @@ Abrir MATLAB solo para revisar si los datos de un entrenamiento son correctos co
 
 ## Instalación
 Descarga el ejecutable desde la sección **[Releases]**. Es un archivo único "Self-Contained" que funciona en cualquier PC del laboratorio.
+
+## Cómo compilar para Windows (Para Desarrolladores)
+
+Si deseas modificar el código y volver a generar el ejecutable (`.exe`), abre tu terminal en la carpeta del proyecto y ejecuta el siguiente comando:
+
+```bash
+dotnet publish -c Release -r win-x64 -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true --self-contained true -p:EnableCompressionInSingleFile=true
