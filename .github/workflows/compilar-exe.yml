@@ -1,0 +1,28 @@
+name: Compilar y Subir EXE
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  workflow_dispatch: # Permite ejecutar este proceso manualmente desde GitHub
+
+jobs:
+  build:
+    runs-on: windows-latest # Utilizamos una computadora con Windows en la nube
+
+    steps:
+    - name: Descargar el código
+      uses: actions/checkout@v4
+
+    - name: Configurar .NET 10
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '10.0.x'
+
+    - name: Compilar el proyecto
+      run: dotnet publish VisorMat.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -o out
+
+    - name: Guardar el archivo .exe generado
+      uses: actions/upload-artifact@v4
+      with:
+        name: VisorMat-Windows-EXE
+        path: out/VisorMat.exe
