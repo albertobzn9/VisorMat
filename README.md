@@ -20,3 +20,15 @@ Si deseas modificar el código y volver a generar el ejecutable (`.exe`), abre t
 
 ```bash
 dotnet publish -c Release -r win-x64 -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true --self-contained true -p:EnableCompressionInSingleFile=true
+```
+
+## Archivo Paralelo En Drive
+
+El snapshot usado como evidencia tutoral se conserva en:
+
+```text
+/Users/ab/Library/CloudStorage/GoogleDrive-jasjabs19@gmail.com/My Drive/workspace/04_doctorado/02_evaluacion-tutoral/01_sources/04_repos_del_proyecto/02_VisorMat-main
+```
+
+Es una copia histórica de referencia. El trabajo activo y las correcciones se
+hacen únicamente en este repositorio.
